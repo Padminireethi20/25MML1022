@@ -23,12 +23,11 @@ def before_request():
 
 
 @app.after_request
-def after_request():
+def after_request(response):
 
     execution_time = (
         time.time() - request_start_time
     )
-
 
     print(f"Status Code: {response.status_code}")
 
